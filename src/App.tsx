@@ -3,7 +3,7 @@ import { Experience } from "./components/Experience";
 import { Leva } from "leva";
 
 function App() {
-  const cameraScalingFactor = 0.8;
+  const cameraScalingFactor = 2;
   return (<>
       <Leva collapsed />
         <Canvas shadows camera={{ position: [0.5 * cameraScalingFactor, 1 * cameraScalingFactor, 2 * cameraScalingFactor], fov: 30 }}>
