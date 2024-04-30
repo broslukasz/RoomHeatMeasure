@@ -1,0 +1,11 @@
+Model Information:
+* title:	Room Office
+* source:	https://sketchfab.com/3d-models/room-office-df0f5391fa1840d8907e002fe4cf6b57
+* author:	sander-zh (https://sketchfab.com/sander-zh)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Room Office" (https://sketchfab.com/3d-models/room-office-df0f5391fa1840d8907e002fe4cf6b57) by sander-zh (https://sketchfab.com/sander-zh) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
