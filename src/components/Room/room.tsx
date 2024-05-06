@@ -14,7 +14,6 @@ function addObject($event: any, scene: THREE.Scene) {
   const material = new THREE.MeshStandardMaterial( { color: 0xffff00 } );
   const mesh = new THREE.Mesh( geometry, material );
   mesh.castShadow = true;
-  mesh.receiveShadow = true;
 
   addedMesh = mesh;
   scene.add(mesh);
@@ -22,25 +21,16 @@ function addObject($event: any, scene: THREE.Scene) {
   mesh.position.set(x, y + 0.3, z)
 }
 
-const newMaterial = new THREE.MeshStandardMaterial();
-
 export default function Room() {
   const gltf = useLoader(GLTFLoader, 'src/assets/office/scene.gltf');
-  // const gltf = useLoader(GLTFLoader, 'src/assets/room/scene.gltf');
-  // const gltf = useLoader(GLTFLoader, 'src/assets/room_office/scene.gltf');
   const {scene} = useThree();
   const model = gltf.scene;
 
-  model.castShadow = true;
-
   model.traverse(o => {
     if(o.isMesh) {
-      o.material = newMaterial;
       o.receiveShadow = true;
     }
   })
-  
-  // model.scale.set(0.1, 0.1, 0.1);
 
   return <primitive castShadow receiveShadow onClick={($event) => addObject($event, scene)} object={model} />
 }
