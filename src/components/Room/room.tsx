@@ -25,8 +25,9 @@ function addObject($event: any, scene: THREE.Scene) {
 const newMaterial = new THREE.MeshStandardMaterial();
 
 export default function Room() {
+  const gltf = useLoader(GLTFLoader, 'src/assets/office/scene.gltf');
   // const gltf = useLoader(GLTFLoader, 'src/assets/room/scene.gltf');
-  const gltf = useLoader(GLTFLoader, 'src/assets/room_office/scene.gltf');
+  // const gltf = useLoader(GLTFLoader, 'src/assets/room_office/scene.gltf');
   const {scene} = useThree();
   const model = gltf.scene;
 
