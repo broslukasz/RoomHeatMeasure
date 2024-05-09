@@ -17,7 +17,7 @@ export default function Room() {
 
   const addMesh = ($event: any) => {
     const {x, y, z} = $event.intersections[0].point;
-    const yTransition = 0.3;
+    const yTransition = 1;
     setMeasurement([x, y + yTransition, z])
   }
 
