@@ -5,7 +5,6 @@ import { Perf } from "r3f-perf";
 import Room from "./Room/room";
 import { useRef, useState } from "react";
 import { DirectionalLightHelper, PointLightHelper} from "three";
-import { log } from "three/examples/jsm/nodes/Nodes.js";
 
 export const Experience = () => {
   const { performanceVisible } = useControls({ 
