@@ -5,7 +5,7 @@ import { Leva } from "leva";
 function App() {
   const cameraScalingFactor = 2;
   // const [cameraX, cameraY, cameraZ] = [-0.5, 1.3, -3]
-  const [cameraX, cameraY, cameraZ] = [-2, 2, 3]
+  const [cameraX, cameraY, cameraZ] = [7, 6, 5]
 
   return (<>
       <Leva collapsed />
