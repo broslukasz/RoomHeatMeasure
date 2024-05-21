@@ -5,6 +5,7 @@ import { Perf } from "r3f-perf";
 import Room from "./Room/room";
 import { useRef, useState } from "react";
 import { DirectionalLightHelper, PointLightHelper} from "three";
+import { log } from "three/examples/jsm/nodes/Nodes.js";
 
 export const Experience = () => {
   const { performanceVisible } = useControls({ 
@@ -15,6 +16,7 @@ export const Experience = () => {
   const [measurement, setMeasurement] = useState(null)
 
   const onRoomClick = ($event: any) => {
+    $event.stopPropagation()
     const {x, y, z} = $event.intersections[0].point;
     const yTransition = 1;
     setMeasurement([x, y + yTransition, z]);
