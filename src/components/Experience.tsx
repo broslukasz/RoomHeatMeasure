@@ -13,13 +13,20 @@ export const Experience = () => {
   });
   const lightHelper = useRef(null);
   const pointLightHelper = useRef(null);
-  const [measurement, setMeasurement] = useState(null)
+  const [measurement, setMeasurement] = useState(null);
+  const [measurementMarker, setMeasurementMarker] = useState(null);
 
-  const onRoomClick = ($event: any) => {
+  const onRoomDoubleClick = ($event: any) => {
     $event.stopPropagation()
     const {x, y, z} = $event.intersections[0].point;
     const yTransition = 1;
     setMeasurement([x, y + yTransition, z]);
+  }
+
+  const onPointerMoveOnRoom = ($event: any) => {
+    const {x, y, z} = $event.intersections[0].point;
+    const yTransition = 1;
+    setMeasurementMarker([x, y + yTransition, z]);
   }
 
   useHelper(lightHelper, DirectionalLightHelper )
@@ -32,11 +39,16 @@ export const Experience = () => {
       <OrbitControls />
       <directionalLight castShadow ref={lightHelper} position={[0, 4.5, 0]} intensity={0.5}></directionalLight>
       <pointLight ref={pointLightHelper} position={[0, 4.5, 0]} intensity={0.5}></pointLight>
-      <Room onClick={onRoomClick} />
+      <Room onPointerMove={onPointerMoveOnRoom} onDoubleClick={onRoomDoubleClick} />
 
       {measurement && <mesh castShadow position={measurement}>
         <sphereGeometry args={[ 0.1, 32, 16]} />
         <meshStandardMaterial color={0xffff00} />
+      </mesh>}
+
+      {measurementMarker && <mesh castShadow position={measurementMarker}>
+        <sphereGeometry args={[ 0.1, 32, 16]} />
+        <meshStandardMaterial transparent={true} opacity={0.5} color={0xffff00} />
       </mesh>}
     </>
   );
