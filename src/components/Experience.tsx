@@ -23,6 +23,7 @@ export const Experience = () => {
   }
 
   const onPointerMoveOnRoom = ($event: any) => {
+    $event.stopPropagation();
     const {x, y, z} = $event.intersections[0].point;
     const yTransition = 1;
     setMeasurementMarker([x, y + yTransition, z]);
