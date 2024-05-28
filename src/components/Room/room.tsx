@@ -1,7 +1,7 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
-export default function Room({ onDoubleClick, onPointerMove }) {
+export default function Room({ onClick, onPointerMove, onPointerDown, onPointerUp }) {
   const gltf = useLoader(GLTFLoader, 'src/assets/office/scene.gltf');
   const model = gltf.scene;
 
@@ -12,6 +12,14 @@ export default function Room({ onDoubleClick, onPointerMove }) {
   })
 
   return <>
-    <primitive castShadow receiveShadow onPointerMove={onPointerMove} onDoubleClick={onDoubleClick} object={model} />
+    <primitive
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      castShadow
+      receiveShadow
+      onPointerMove={onPointerMove}
+      onClick={onClick}
+      object={model}
+     />
   </>
 }
