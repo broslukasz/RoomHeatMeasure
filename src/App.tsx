@@ -12,9 +12,15 @@ function Loader() {
 function App() {
   const cameraScalingFactor = 2;
   // const [cameraX, cameraY, cameraZ] = [-0.5, 1.3, -3]
+
   // Camera for basic office model
   // const [cameraX, cameraY, cameraZ] = [7, 6, 5]
-  const [cameraX, cameraY, cameraZ] = [-6, 4, -5]
+
+  // Camera for Gdansk office bigger
+  // const [cameraX, cameraY, cameraZ] = [-6, 4, -5]
+
+    // Camera for Gdansk office smaller
+    const [cameraX, cameraY, cameraZ] = [6, 4, 5]
 
   return (<>
       <Leva collapsed />
