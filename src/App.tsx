@@ -1,6 +1,13 @@
 import { Canvas, useThree } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { Leva } from "leva";
+import { Environment, Html, useProgress } from "@react-three/drei";
+import { Suspense } from "react";
+
+function Loader() {
+  const { progress } = useProgress()
+  return <Html center>{progress} % loaded</Html>
+}
 
 function App() {
   const cameraScalingFactor = 2;
@@ -11,7 +18,10 @@ function App() {
       <Leva collapsed />
         <Canvas shadows camera={{ position: [cameraX * cameraScalingFactor, cameraY * cameraScalingFactor, cameraZ * cameraScalingFactor], fov: 30 }}>
           <color attach="background" args={["#000000"]} />
-          <Experience />
+          <Suspense fallback={<Loader />}>
+            <Experience />
+          </Suspense>
+          <Environment preset="dawn" background />
         </Canvas>
     </>
   );
