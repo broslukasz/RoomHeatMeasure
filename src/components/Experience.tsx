@@ -46,7 +46,7 @@ export const Experience = () => {
     <>
       { performanceVisible && <Perf position={'top-left'}></Perf>}
       <OrbitControls />
-      {/* <directionalLight castShadow ref={lightHelper} position={[0, 4.5, 0]} intensity={0.5}></directionalLight> */}
+      <directionalLight castShadow ref={lightHelper} position={[0, 4.5, 0]} intensity={0.5}></directionalLight>
       
       <Room
         onPointerDown={onPointerDownOnRoom}
